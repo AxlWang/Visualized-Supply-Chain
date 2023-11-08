@@ -7,16 +7,13 @@ import datetime
 import spore
 
 
-def sum13qty(store_id, date):
-    date = pd.to_datetime(date)
-    res = sales.loc[(sales["LOC_IDNT"] == store_id) & (sales["WORK_DATE"] < date) & (
-                sales["WORK_DATE"] >= (date - datetime.timedelta(days=14))),
-                    "SLS_QTY"].sum()
+def sum13qty(store_id):
+    res = sum(store_list[store_id].sales)
     return res
 
 
 def transit(start, step, date):
-    if (start.soh > sum13qty(start.store_id, date) * 2):
+    if (start.soh > sum13qty(start.store_id) * 2):
         for n in start.neighbors.keys():
             if ((store_list[n].soh + store_list[n].in_transit) == 0) & (start.soh > 2):
                 start.consume(2)
