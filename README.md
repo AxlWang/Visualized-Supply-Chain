@@ -14,41 +14,8 @@ This program requires reading the Excel sales data table of a specific template,
 
 - CN: 首先，我创建了一个名叫“Spore”的类，所有门店和店铺都是这个类的对象。它的属性包括：soh（门店的库存），spaceX 和 spaceY（在画布中的坐标，随机产生的），neighbors（一个字典，用来记录附近的其它门店及距离），in_transit (初始库存，运往门店的在途货品数量)，trace（一个字典，用于记录发往其它门店的货品运到了哪里），等等。主要的类方法是consume，即在门店发生销售时扣减库存。
 
-```python
-import random
 
-class Spore(object):
 
-    def __init__(self, startsoh, store_id, scope, rank):
-        # 随机的横坐标与纵坐标
-        self.spaceX = random.randint(100, 1100)
-        self.spaceY = random.randint(100, 600)
-        self.daily_soh = []
-        self.soh = startsoh
-        self.store_id = store_id
-        self.daily_soh.append(self.soh)
-        self.neighbors = {}
-        self.trace = {}
-        self.scope = scope
-        self.rank = rank
-        self.in_transit = 0
-        self.sales = []
+- EN: The logic of the entire system operation is that the store generates sales based on the read data. When it is out of stock, the warehouse or its neighboring stores will replenish it. The 'gen' function is used to update the daily inventory of the warehouse and all stores.
 
-    def consume(self, qty):
-        if self.soh >= qty:
-            self.sales.append(qty)
-            self.soh -= qty
-        else:
-            self.soh = 0
-
-    def absorb(self, qty):
-        self.soh += qty
-
-    def record_sales(self, qty):
-        self.sales.append(qty)
-
-```
-
-- EN: The logic of the entire system operation is that the store generates sales based on the read data. When it is out of stock, the warehouse or its neighboring stores will replenish it.
-
-- CN: 
+- CN: 整个系统运作的逻辑是，门店基于读取的数据产生销售，当它缺货时，仓库或者其邻近的店铺会向它补货。"gen"函数被用来更新仓库和所有门店每一天的库存。
