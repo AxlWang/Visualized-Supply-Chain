@@ -39,9 +39,9 @@ flowchart LR
   C{Is the state normal?} -- No --> D[Warrning!];
   C{Is the state normal?} -- Yes --> E[initialization];
   E[initialization] --> F[network];
-  F[network] --> G{day > (len(date_list) - 1)};
-  G{day > (len(date_list) - 1)} -- True --> H[Over];
-  G{day > (len(date_list) - 1)} -- False --> I[gen];
+  F[network] --> G{out of date?};
+  G{out of date?} -- Yes --> H{Over};
+  G{out of date?} -- No --> I[gen];
   I[gen] --> J[in_transit];
-  J[transit] --> G{day > (len(date_list) - 1)};
+  J[in_transit] --> G{out of date?}
 ```
