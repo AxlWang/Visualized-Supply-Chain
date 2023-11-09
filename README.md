@@ -40,7 +40,9 @@ flowchart LR
   C{Is the state normal?} -- Yes --> E[initialization];
   E[initialization] --> F[network];
   F[network] --> G{out of date?};
-  G{out of date?} -- Yes --> H{Over};
+  G{out of date?} -- Yes --> H{satrt again?};
+  H{satrt again?} -- Yes --> B[start_handler];
+  H{satrt again?} -- No --> K[Over];
   G{out of date?} -- No --> I[gen];
   I[gen] --> J[in_transit];
   J[in_transit] --> G{out of date?}
