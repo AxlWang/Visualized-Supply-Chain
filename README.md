@@ -28,9 +28,9 @@ This program requires reading the Excel sales data table of a specific template,
 |10|absorb|方法|用于增加库存|
 |11|record_sales|方法|用于记录每日销售|
 
-- EN: The logic of the entire system operation is that the store generates sales based on the read data. When it is out of stock, the warehouse or its neighboring stores will replenish it. After the user selects a city, the "initialization" function initializes the corresponding "Spore" object, and the "network" function updates the "neighbors" attribute based on the object's location. Afterwards, the 'gen' function is used to update the daily inventory of the warehouse and all stores. This function calls a function called "in_transit" to update the replenishment between the store and warehouse. The function needs to fill in a parameter called "step" to control the delivery speed, which I set to 60 during testing.
+- EN: The logic of the entire system operation is that the store generates sales based on the read data. When it is out of stock, the warehouse or its neighboring stores will replenish it. After the user selects a city, the "initialization" function initializes the corresponding "Spore" object, and the "network" function updates the "neighbors" attribute based on the object's location. Afterwards, the 'gen' function is used to update the daily inventory of the warehouse and all stores. This function calls a function called "in_transit" to update the replenishment between the store and warehouse. The function needs to fill in a parameter called "step" to control the delivery speed, which I set to 60 during testing. After the read sales data is traversed, the simulation process of the program ends. The user can switch cities, modify the inventory quantity in "setting", and run again.
 
-- CN: 整个系统运作的逻辑是，门店基于读取的数据产生销售，当它缺货时，仓库或者其邻近的店铺会向它补货。在使用者选择了城市以后，“initialization”函数会初始化对应的“Spore”对象，“network”函数会根据对象的位置更新“neighbors”属性。之后，"gen"函数被用来更新仓库和所有门店每一天的库存。该函数调用一个名为“in_transit”的函数，更新门店与仓库之间的补货情况，该函数需要填入一个名为"step"的参数，用来控制送货的速度，我在测试时设置了60。
+- CN: 整个系统运作的逻辑是，门店基于读取的数据产生销售，当它缺货时，仓库或者其邻近的店铺会向它补货。在使用者选择了城市以后，“initialization”函数会初始化对应的“Spore”对象，“network”函数会根据对象的位置更新“neighbors”属性。之后，"gen"函数被用来更新仓库和所有门店每一天的库存。该函数调用一个名为“in_transit”的函数，更新门店与仓库之间的补货，该函数需要填入一个名为"step"的参数，用来控制送货的速度，我在测试时设置了60。当读取的销售数据被遍历完以后，程序的模拟过程结束，使用者可以切换城市，在“setting”中修改库存数量后再次运行。
 
 ```mermaid
 flowchart LR
