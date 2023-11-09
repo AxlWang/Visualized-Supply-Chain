@@ -12,7 +12,7 @@ def sum13qty(store_id):
     return res
 
 
-def transit(start, step, date):
+def transit(start, step):
     if (start.soh > sum13qty(start.store_id) * 2):
         for n in start.neighbors.keys():
             if ((store_list[n].soh + store_list[n].in_transit) == 0) & (start.soh > 2):
@@ -51,7 +51,7 @@ def gen(date):
         store_list[i].consume(sls_qty)
         store_list[i].record_sales(sls_qty)
         ttl_sales_qty += sls_qty
-        transit(store_list[i], 60, date)
+        transit(store_list[i], 60)
         if (store_list[i].soh == 0)&(store_list[i].rank != 6):
             oos_count += 1
             oos_by_type[store_list[i].rank] += 1
