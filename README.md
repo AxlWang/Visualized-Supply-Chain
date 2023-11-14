@@ -53,5 +53,6 @@ flowchart LR
 
 ## Areas for Improvement
 
-- EN: The further idea is to enable this system to automatically open and close stores based on regional sales.
-- CN: 进一步的设想是让这个系统具备根据区域销售自动开店和关店的能力。
+- EN: The further idea is to enable this system to automatically open and close stores based on regional sales. In addition, in the real supply chain system, warehouses may not ship goods to stores in a timely manner. If you want to be more realistic, you should consider setting a fixed delivery date for the store.
+
+- CN: 进一步的设想是让这个系统具备根据区域销售自动开店和关店的能力。此外，现实的物流体系中，仓库给门店发货并不会那么及时，如果想要更加贴近现实情况，应该考虑给门店设置固定的发货日期。
