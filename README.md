@@ -50,3 +50,8 @@ flowchart LR
 - EN: When creating a data dashboard, I used a tab container (Notebook). When the 'gen' function runs, daily sales and out of stock data is recorded in a list, which is then read by the function responsible for visualization. These functions dynamically adjust the spacing and height of the column chart based on the length of the list and the size of the data (see functions "show_sales", "show_oos", "show_oos_by_type" for details), thereby obtaining a dynamic data dashboard.
 
 - CN: 制作数据看板时，我使用了选项卡容器（Notebook）。当“gen”函数运行时，每天的销售和缺货数据会被用列表记录下来，然后列表被负责可视化的函数读取。这些函数会根据列表的长度、数据的大小动态调整柱形图的间距、高度（详见于函数“show_sales”，“show_oos”，“show_oos_by_type”），从而获得动态的数据看板。
+
+## Areas for Improvement
+
+- EN: The further idea is to enable this system to automatically open and close stores based on regional sales.
+- CN: 进一步的设想是让这个系统具备根据区域销售自动开店和关店的能力。
