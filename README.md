@@ -1,5 +1,8 @@
 # Visualized Supply Chain System
 
+![img1](效果图1.gif)
+![img1](效果图2.gif)
+
 ## Introduction(简介)
 
 - EN: This program visualizes the flow of goods in the supply chain system between warehouses and stores. 
