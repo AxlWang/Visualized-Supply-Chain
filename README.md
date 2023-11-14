@@ -1,6 +1,7 @@
 # Visualized Supply Chain System
 
 ![img1](效果图1.gif)
+
 ![img1](效果图2.gif)
 
 ## Introduction(简介)
